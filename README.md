@@ -1,4 +1,4 @@
-# idea_vim_textobj-line-like_mapping
+# textobj-line-like mapping
 
 To map `il` for "inner line" similar to `viw`, `diw`, and `ciw` for "inner word", add the following to the end of your `.ideavimrc` file:
 
@@ -22,3 +22,23 @@ To achieve this, you would need to use functions or keywords like `normal` or `c
 ## Additional Mappings
 
 You can create more mappings like `g~il` as needed for other operations.
+
+# Protecting the Default Register with the Blackhole Register
+
+When pasting into a selected block, the selected portion is deleted and stored in the default register. This overwrites the previously copied content in the default register.
+
+By deleting the selected block and putting it into the blackhole register instead, the default register remains unaffected.
+
+
+
+
+```
+xnoremap <leader>p \"_dP
+```
+
+
+- `<leader>` means pressing the backslash (`\`) key.
+- `\"` means escaping the `"` character.
+- `P` is used to adjust the cursor position after `d` moves it one step forward.
+
+
